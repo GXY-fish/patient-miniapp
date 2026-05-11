@@ -1,0 +1,51 @@
+.page {
+  padding-bottom: 24rpx;
+}
+
+.report-item {
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #E2E8F0;
+}
+
+.report-item:last-child {
+  border-bottom: none;
+}
+
+.report-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.report-id {
+  font-weight: 600;
+  font-size: 28rpx;
+}
+
+.report-risk {
+  font-size: 24rpx;
+  padding: 6rpx 14rpx;
+  border-radius: 999rpx;
+}
+
+.risk-high {
+  background: #FEE2E2;
+  color: #B91C1C;
+}
+
+.risk-medium {
+  background: #FEF3C7;
+  color: #B45309;
+}
+
+.risk-low {
+  background: #DCFCE7;
+  color: #15803D;
+}
+
+.report-time,
+.report-summary {
+  margin-top: 10rpx;
+  color: #64748B;
+  font-size: 26rpx;
+}
