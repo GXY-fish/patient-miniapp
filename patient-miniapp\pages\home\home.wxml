@@ -1,0 +1,32 @@
+<view class="page">
+  <view class="card hero">
+    <view class="title">造口AI评估</view>
+    <view class="subtle">在家拍照上传，医生审核后返回护理建议</view>
+    <view class="status-row">
+      <view class="status-pill">最近风险：{{dashboard.riskLevel}}</view>
+      <view class="status-pill">待处理：{{dashboard.pendingCount}}</view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">快捷入口</view>
+    <view class="action-row">
+      <button class="btn-primary action-btn" bindtap="goEval">立即评估</button>
+      <button class="btn-secondary action-btn" bindtap="goReports">历史报告</button>
+      <button class="btn-secondary action-btn" bindtap="goMessages">消息提醒</button>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">最新状态</view>
+    <view class="info-item">最近报告：{{dashboard.lastReportTime}}</view>
+    <view class="info-item">下次随访：{{dashboard.nextFollowupDate}}</view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">当前流程</view>
+    <view class="info-item">1. 去“我的”页登录并保存档案</view>
+    <view class="info-item">2. 去“评估”页上传图片并提交</view>
+    <view class="info-item">3. 去“报告”页查看医生审核结果</view>
+  </view>
+</view>
