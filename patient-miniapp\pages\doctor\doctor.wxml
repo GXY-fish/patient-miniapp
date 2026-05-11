@@ -1,0 +1,50 @@
+<view class="page">
+  <view class="card hero-card">
+    <view class="hero-topline">
+      <view class="hero-badge">授权医生</view>
+      <view class="hero-note">仅展示待审核病例与审核结果</view>
+    </view>
+    <view class="title">医生首页</view>
+    <view class="subtitle">查看待审核病例，完成风险判断与护理建议</view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">待办概览</view>
+    <view class="stats-grid">
+      <view class="stat-box" bindtap="onStatTap" data-type="pending">
+        <view class="stat-value">{{dashboard.pending_total}}</view>
+        <view class="stat-label">待审核</view>
+      </view>
+      <view class="stat-box" bindtap="onStatTap" data-type="high">
+        <view class="stat-value">{{dashboard.high_risk_total}}</view>
+        <view class="stat-label">高风险</view>
+      </view>
+      <view class="stat-box" bindtap="onStatTap" data-type="done">
+        <view class="stat-value">{{dashboard.done_today}}</view>
+        <view class="stat-label">今日完成</view>
+      </view>
+      <view class="stat-box" bindtap="onStatTap" data-type="timeout">
+        <view class="stat-value">{{dashboard.timeout_total}}</view>
+        <view class="stat-label">超时</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">病例队列</view>
+    <view class="filter-bar">
+      <view class="filter-pill {{activeFilter === 'all' ? 'active' : ''}}" bindtap="onFilterTap" data-type="all">全部</view>
+      <view class="filter-pill {{activeFilter === 'pending' ? 'active' : ''}}" bindtap="onFilterTap" data-type="pending">待审核</view>
+      <view class="filter-pill {{activeFilter === 'high' ? 'active' : ''}}" bindtap="onFilterTap" data-type="high">高风险</view>
+      <view class="filter-pill {{activeFilter === 'done' ? 'active' : ''}}" bindtap="onFilterTap" data-type="done">已完成</view>
+      <view class="filter-pill {{activeFilter === 'timeout' ? 'active' : ''}}" bindtap="onFilterTap" data-type="timeout">超时</view>
+    </view>
+    <view wx:if="{{filteredCases.length}}">
+      <view class="case-item" wx:for="{{filteredCases}}" wx:key="case_id" bindtap="openCase" data-caseid="{{item.case_id}}">
+        <view class="case-title">病例 #{{item.case_id}} · {{item.patient_name_masked}}</view>
+        <view class="case-meta">术后 {{item.postop_days}} 天 · 风险：{{item.ai_risk_level}} · 状态：{{item.case_status}}</view>
+      </view>
+    </view>
+    <view wx:else class="empty-tip">当前没有病例数据</view>
+  </view>
+</view>
