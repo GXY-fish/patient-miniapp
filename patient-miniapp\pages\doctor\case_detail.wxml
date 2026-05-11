@@ -1,0 +1,25 @@
+<view class="page">
+  <view class="card">
+    <view class="section-title">病例 #{{case.case_id}}</view>
+    <view class="case-row">患者：{{case.patient_name_masked}}</view>
+    <view class="case-row">状态：{{case.case_status}}</view>
+    <view class="case-row">AI 总结：{{case.ai_summary || '无'}}</view>
+    <view class="case-row">AI 置信度：{{case.ai_confidence}}</view>
+    <view class="case-photos" wx:if="{{case.photos && case.photos.length}}">
+      <view wx:for="{{case.photos}}" wx:key="*this">
+        <image src="{{item}}" mode="aspectFit" style="width:100%;height:200rpx;margin-top:8rpx;" />
+      </view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">审核并生成报告</view>
+    <picker mode="selector" range="['低','中','高']" bindchange="onRiskChange" value="0">
+      <view class="case-row">最终风险：{{finalRisk || '低'}}</view>
+    </picker>
+    <input class="input" placeholder="并发症标签 (逗号分隔)" bindinput="onCompInput" />
+    <textarea class="input" placeholder="护理建议" bindinput="onAdviceInput"></textarea>
+    <input class="input" placeholder="处置 (例：门诊随访)" bindinput="onDispositionInput" />
+    <button class="btn-primary" bindtap="submitReview">提交审核</button>
+  </view>
+</view>
