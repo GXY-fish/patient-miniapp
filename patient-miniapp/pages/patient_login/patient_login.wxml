@@ -1,0 +1,30 @@
+<view class="page">
+  <view class="card login-card">
+    <view class="title">患者登录</view>
+    <view class="subtitle">登录后可提交评估并查看医生报告</view>
+    <view class="current-account">当前账号：{{loginPhone || '未登录'}}</view>
+
+    <view class="field">
+      <view class="field-label">手机号</view>
+      <input class="input" style="color:#0F172A;background-color:#FFFFFF;" value="{{profile.phone}}" bindinput="onPhoneInput" />
+    </view>
+    <view class="field">
+      <view class="field-label">姓名</view>
+      <input class="input" style="color:#0F172A;background-color:#FFFFFF;" value="{{profile.name}}" bindinput="onNameInput" />
+    </view>
+    <view class="field">
+      <view class="field-label">病历号（可选）</view>
+      <input class="input" style="color:#0F172A;background-color:#FFFFFF;" value="{{profile.medicalNo}}" bindinput="onMedicalNoInput" />
+    </view>
+
+    <picker mode="selector" range="{{stomaTypeOptions}}" value="{{stomaTypeIndex}}" bindchange="onStomaTypeChange">
+      <view class="picker-item">造口类型：{{profile.stomaType}}</view>
+    </picker>
+    <picker mode="date" bindchange="onSurgeryDateInput">
+      <view class="picker-item">手术日期：{{profile.surgeryDate || '请选择'}}</view>
+    </picker>
+
+    <button class="btn-secondary login-btn" bindtap="saveProfile">保存档案</button>
+    <button class="btn-primary login-btn" bindtap="login">患者登录</button>
+  </view>
+</view>

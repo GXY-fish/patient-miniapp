@@ -1,0 +1,49 @@
+<view class="page">
+  <view class="card bind-tip" wx:if="{{bindingNeeded}}">
+    <view class="bind-title">先完成患者登录</view>
+    <view class="bind-text">提交评估前需要绑定患者档案。请先去患者登录页完成登录与档案保存。</view>
+    <button class="btn-primary bind-btn" bindtap="goPatientLogin">去患者登录</button>
+  </view>
+
+  <view class="card">
+    <view class="title">拍照评估</view>
+    <view class="subtle">请上传 1-3 张照片（建议包含正面、侧面和局部近景）</view>
+    <view class="upload-grid">
+      <view class="upload-box" wx:for="{{photos}}" wx:key="*this">
+        <image class="upload-image" src="{{item}}" mode="aspectFill" />
+      </view>
+      <view class="upload-box upload-add" bindtap="choosePhoto" wx:if="{{photos.length < 3}}">+ 添加照片</view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">症状填写</view>
+    <view class="form-item">
+      <text>疼痛评分：{{symptom.painScore}}</text>
+      <slider min="0" max="10" step="1" value="{{symptom.painScore}}" bindchange="onPainChange" />
+    </view>
+
+    <view class="form-item">
+      <text>渗液程度</text>
+      <radio-group bindchange="onOozeChange">
+        <label class="radio-item"><radio value="无" checked="{{symptom.oozeLevel === '无'}}" />无</label>
+        <label class="radio-item"><radio value="少" checked="{{symptom.oozeLevel === '少'}}" />少</label>
+        <label class="radio-item"><radio value="中" checked="{{symptom.oozeLevel === '中'}}" />中</label>
+        <label class="radio-item"><radio value="多" checked="{{symptom.oozeLevel === '多'}}" />多</label>
+      </radio-group>
+    </view>
+
+    <view class="flag-row">
+      <button size="mini" bindtap="toggleFlag" data-key="bleeding">出血：{{symptom.bleeding ? '是' : '否'}}</button>
+      <button size="mini" bindtap="toggleFlag" data-key="odor">异味：{{symptom.odor ? '是' : '否'}}</button>
+      <button size="mini" bindtap="toggleFlag" data-key="fever">发热：{{symptom.fever ? '是' : '否'}}</button>
+      <button size="mini" bindtap="toggleFlag" data-key="prolapseSuspect">疑似脱垂：{{symptom.prolapseSuspect ? '是' : '否'}}</button>
+    </view>
+
+    <textarea class="note" placeholder="补充描述（可选）" value="{{symptom.note}}" bindinput="onNoteInput"></textarea>
+  </view>
+
+  <view class="card">
+    <button class="btn-primary submit-btn" loading="{{submitting}}" bindtap="submit">提交评估</button>
+  </view>
+</view>

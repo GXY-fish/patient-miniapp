@@ -1,0 +1,6 @@
+.page { padding: 24rpx; }
+.choose-card { padding: 30rpx; text-align: center; }
+.title { font-size: 34rpx; font-weight: 700; margin-bottom: 24rpx; }
+.role-btn { display: block; width: 80%; margin: 12rpx auto; height: 88rpx; line-height: 88rpx; border-radius: 12rpx; }
+.role-btn.patient { background: #0F766E; color: #fff; }
+.role-btn.doctor { background: #1E40AF; color: #fff; }

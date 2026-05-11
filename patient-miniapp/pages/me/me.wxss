@@ -1,0 +1,41 @@
+.page {
+  padding: 18rpx;
+  padding-bottom: 24rpx;
+  background: linear-gradient(180deg, #F8FAFC 0%, #F4F7FB 55%, #EEF3F9 100%);
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 16rpx;
+}
+
+.profile-card {
+  margin: 0;
+  border-radius: 22rpx;
+  background: linear-gradient(135deg, #0F766E 0%, #115E59 52%, #164E63 100%);
+  color: #FFFFFF;
+}
+
+.profile-item {
+  margin-top: 14rpx;
+  font-size: 28rpx;
+}
+
+.menu-item {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #E2E8F0;
+  font-size: 28rpx;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.card {
+  margin: 18rpx 0 0;
+}
+
+.danger {
+  color: #DC2626;
+}
