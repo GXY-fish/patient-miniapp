@@ -1,0 +1,38 @@
+.page {
+  padding-bottom: 24rpx;
+}
+
+.msg-item {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #E2E8F0;
+}
+
+.msg-item:last-child {
+  border-bottom: none;
+}
+
+.msg-item.unread {
+  background: #F8FAFC;
+}
+
+.msg-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.msg-title {
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.msg-time {
+  font-size: 24rpx;
+  color: #94A3B8;
+}
+
+.msg-content {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #475569;
+}
