@@ -1,0 +1,19 @@
+<view class="page">
+  <view class="card">
+    <view class="title">历史报告</view>
+    <view class="subtle">查看AI初评和医生确认后的最终结果</view>
+  </view>
+
+  <view class="card report-list">
+    <block wx:for="{{reports}}" wx:key="id">
+      <view class="report-item">
+        <view class="report-top">
+          <text class="report-id">{{item.id}}</text>
+          <text class="report-risk risk-{{item.riskClass}}">风险：{{item.riskLevel}}</text>
+        </view>
+        <view class="report-time">{{item.time}} · {{item.status}}</view>
+        <view class="report-summary">{{item.summary}}</view>
+      </view>
+    </block>
+  </view>
+</view>
