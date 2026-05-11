@@ -1,0 +1,50 @@
+.page {
+  padding-bottom: 24rpx;
+}
+
+.hero {
+  background: linear-gradient(135deg, #0F766E, #14B8A6);
+  color: #FFFFFF;
+}
+
+.hero .title,
+.hero .subtle {
+  color: #FFFFFF;
+}
+
+.status-row {
+  display: flex;
+  gap: 16rpx;
+  margin-top: 24rpx;
+  flex-wrap: wrap;
+}
+
+.status-pill {
+  padding: 12rpx 20rpx;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999rpx;
+  font-size: 24rpx;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 20rpx;
+}
+
+.action-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.action-btn {
+  border: none;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.info-item {
+  font-size: 28rpx;
+  margin-top: 12rpx;
+}
