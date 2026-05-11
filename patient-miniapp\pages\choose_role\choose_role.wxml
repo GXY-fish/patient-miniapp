@@ -1,0 +1,9 @@
+<view class="page">
+  <view class="card choose-card">
+    <view class="title">请选择您的身份</view>
+    <view class="btns">
+      <button class="role-btn patient" bindtap="choosePatient">我是患者</button>
+      <button class="role-btn doctor" bindtap="chooseDoctor">我是医生</button>
+    </view>
+  </view>
+</view>
